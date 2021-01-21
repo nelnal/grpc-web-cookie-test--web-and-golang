@@ -7,7 +7,10 @@ plugins:
   - name: go-grpc
     out: server
     opt: paths=source_relative
+  - name: js
+    out: web/src
+    opt: import_style=commonjs
   - name: grpc-web
-    out: web
+    out: web/src
     opt: import_style=typescript,mode=grpcwebtext
     path: ./node_modules/protoc-gen-grpc-web/bin/protoc-gen-grpc-web
