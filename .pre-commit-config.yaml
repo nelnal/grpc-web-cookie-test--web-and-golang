@@ -20,3 +20,9 @@ repos:
     rev: v1.0.0
     hooks:
       - id: buf-check-lint
+  - repo: local
+    hooks:
+      - id: run-golangci-lint
+        name: Run golanci-lint
+        entry: ./scripts/golangci-lint.sh
+        language: script
