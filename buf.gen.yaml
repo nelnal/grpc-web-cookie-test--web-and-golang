@@ -1,0 +1,13 @@
+version: v1beta1
+
+plugins:
+  - name: go
+    out: server
+    opt: paths=source_relative
+  - name: go-grpc
+    out: server
+    opt: paths=source_relative
+  - name: grpc-web
+    out: web
+    opt: import_style=typescript,mode=grpcwebtext
+    path: ./node_modules/protoc-gen-grpc-web/bin/protoc-gen-grpc-web

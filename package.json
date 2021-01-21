@@ -1,0 +1,11 @@
+{
+  "name": "grpc-web-cookie-test--web-and-golang",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:nelnal/grpc-web-cookie-test--web-and-golang.git",
+  "author": "Takashi Asaba <nelnal@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "protoc-gen-grpc-web": "^1.2.1"
+  }
+}

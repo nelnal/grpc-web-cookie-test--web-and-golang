@@ -12,10 +12,6 @@ repos:
         args: ["--fix=lf"]
       - id: no-commit-to-branch
         args: ["--branch", "main"]
-  - repo: https://github.com/golangci/golangci-lint
-    rev: v1.35.2
-    hooks:
-      - id: golangci-lint
   - repo: git@github.com:adrienverge/yamllint.git
     rev: v1.20.0
     hooks:
