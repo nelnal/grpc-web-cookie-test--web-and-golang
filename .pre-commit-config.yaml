@@ -26,3 +26,7 @@ repos:
         name: Run golanci-lint
         entry: ./scripts/golangci-lint.sh
         language: script
+      - id: run-eslint
+        name: Run eslint
+        entry: ./scripts/eslint.sh
+        language: script
