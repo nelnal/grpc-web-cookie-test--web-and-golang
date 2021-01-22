@@ -30,3 +30,13 @@ repos:
         name: Run eslint
         entry: ./scripts/eslint.sh
         language: script
+      - id: run-hadolint-server
+        name: Run hadolint (server)
+        entry: hadolint/hadolint hadolint
+        language: docker_image
+        files: server/Dockerfile
+      - id: run-hadolint-web
+        name: Run hadolint (web)
+        entry: hadolint/hadolint hadolint
+        language: docker_image
+        files: web/Dockerfile
