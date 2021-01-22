@@ -24,6 +24,7 @@ func main() {
 	server := grpc.NewServer(
 		grpc_middleware.WithUnaryServerChain(
 			grpc_logrus.UnaryServerInterceptor(logger),
+			MetadataUnaryServerInterceptor(),
 		),
 		grpc_middleware.WithStreamServerChain(
 			grpc_logrus.StreamServerInterceptor(logger),

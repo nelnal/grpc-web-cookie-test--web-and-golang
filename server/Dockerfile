@@ -8,7 +8,7 @@ ENV   GOPATH=/go \
 
 RUN   : \
   &&  apk update \
-  &&  apk add --no-cache git=2.26.2-r0 make=4.3-r0 \
+  &&  apk add --no-cache git=2.30.0-r0 make=4.3-r0 \
   &&  :
 
 COPY  . .

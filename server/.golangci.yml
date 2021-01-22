@@ -24,3 +24,10 @@ linters:
     - nlreturn
     - paralleltest
     - wsl
+
+
+issues:
+  exclude-rules:
+    - path: interceptor.go
+      linters:
+        - wrapcheck
