@@ -6,9 +6,10 @@ ENV   GOPATH=/go \
       CGO_ENABLED=0 \
       PATH=$GOPATH/bin:$PATH
 
+# hadolint ignore=DL3018
 RUN   : \
   &&  apk update \
-  &&  apk add --no-cache git=2.30.0-r0 make=4.3-r0 \
+  &&  apk add --no-cache git make \
   &&  :
 
 COPY  . .
