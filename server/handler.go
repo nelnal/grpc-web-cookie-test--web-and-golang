@@ -3,7 +3,7 @@ package main
 import (
 	"context"
 
-	greeting_v1 "github.com/nelnal/grpc-web-cookie-test--web-and-golang/server/greeting/v1"
+	greeting_v1 "github.com/nelnal/grpc-web-example/server/greeting/v1"
 )
 
 type handler struct {
