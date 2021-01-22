@@ -1,0 +1,30 @@
+---
+version: "3.7"
+
+services:
+  server:
+    build: server
+    expose:
+      - 50051
+
+  proxy:
+    image: envoyproxy/envoy-alpine-debug:v1.16-latest
+    volumes:
+      - ./proxy/envoy.yaml:/etc/envoy/envoy.yaml
+    expose:
+      - 8080
+      - 9901
+    ports:
+      - 9901:9901
+
+  web:
+    build: web
+    ports:
+      - 8080:80
+    volumes:
+      - ./web/proxy.conf.template:/etc/nginx/conf.d/proxy.conf.template
+      - ./scripts/run_nginx.sh:/srv/run_nginx.sh
+    environment:
+      - GRPC_WEB_HOST=proxy
+      - GRPC_WEB_PORT=8080
+    command: ["/bin/ash", "-c", "/srv/run_nginx.sh"]
