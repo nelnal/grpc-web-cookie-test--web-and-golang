@@ -8638,11 +8638,16 @@
   };
 
   // src/main.ts
-  var greetingClient = new GreetingServiceClient("http://localhost:8080/");
+  var greetingClient = new GreetingServiceClient("http://localhost:8080");
   document.querySelector("#greet").addEventListener("click", () => __async(void 0, null, function* () {
     console.log("greet");
-    const res = yield greetingClient.greet(new import_greeting_pb.GreetRequest(), null);
-    const tr = `<tr><td>${new Date().toString()}</td><td>${res.getMessage()}</td></tr>`;
-    document.querySelector("#log").innerHTML = tr;
+    greetingClient.greet(new import_greeting_pb.GreetRequest(), {}, (err, res) => {
+      if (err != null) {
+        console.error(`${err.code}: ${err.message}`);
+      } else {
+        const tr = `<tr><td>${new Date().toString()}</td><td>${res.getMessage()}</td></tr>`;
+        document.querySelector("#log").insertAdjacentHTML("afterbegin", tr);
+      }
+    });
   }));
 })();
