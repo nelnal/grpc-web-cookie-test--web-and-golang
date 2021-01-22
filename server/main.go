@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net"
 	"os"
 
@@ -9,6 +10,10 @@ import (
 	greeting_v1 "github.com/nelnal/grpc-web-example/server/greeting/v1"
 	"github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
+)
+
+const (
+	port = 50051
 )
 
 func main() {
@@ -27,7 +32,7 @@ func main() {
 
 	greeting_v1.RegisterGreetingServiceServer(server, NewHandler())
 
-	lis, err := net.Listen("tcp", "localhost:50051")
+	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", port))
 	if err != nil {
 		logger.Fatal("failed to listen")
 	}
