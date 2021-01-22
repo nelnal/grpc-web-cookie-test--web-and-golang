@@ -6,7 +6,7 @@ import (
 
 	grpc_middleware "github.com/grpc-ecosystem/go-grpc-middleware"
 	grpc_logrus "github.com/grpc-ecosystem/go-grpc-middleware/logging/logrus"
-	greeting_v1 "github.com/nelnal/grpc-web-cookie-test--web-and-golang/server/greeting/v1"
+	greeting_v1 "github.com/nelnal/grpc-web-example/server/greeting/v1"
 	"github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
 )

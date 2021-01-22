@@ -1,4 +1,4 @@
-module github.com/nelnal/grpc-web-cookie-test--web-and-golang/server
+module github.com/nelnal/grpc-web-example/server
 
 go 1.15
 
